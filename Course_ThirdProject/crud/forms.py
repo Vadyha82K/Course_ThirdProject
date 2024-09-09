@@ -2,5 +2,12 @@ from django import forms
 
 
 class UserForm(forms.Form):
-    name = forms.CharField()
-    age = forms.IntegerField()
+    name = forms.CharField(
+        label="Имя", initial="undefined", help_text="Введите свое имя"
+    )
+    age = forms.IntegerField(
+        label="Ваш возраст?",
+        initial=18,
+        help_text="Введите свой возраст",
+    )
+    field_order = ["age", "name"]
